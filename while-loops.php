@@ -7,16 +7,24 @@
 </head>
 <body>
     <form action="for-loops.php" method="post">
-        <label>Enter a number to count to:</label>
-        <input type="text" name="counter">
-        <input type="submit" value="start" >
+        <input type="submit" value="stop" >
     </form>
 </body>
 </html>
 <?php 
-// count down from the number you entered
-$counter = $_POST["counter"];
-for($i=$counter; $i>0; $i--){
-echo $i . "<br>";
+
+$seconds = 0;
+$running = true;
+
+while ($running == true) {
+
+    if(isset($_POST["stop"])){
+        $running = false;
+    }
+    else{
+        $seconds++;
+        echo $seconds . "<br>";
+    }
+  
 }
 ?>
